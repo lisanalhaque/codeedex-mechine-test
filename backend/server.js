@@ -9,7 +9,7 @@ const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 connectDB();
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({ origin: 'https://codeedex-mechine-test.vercel.app' }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
