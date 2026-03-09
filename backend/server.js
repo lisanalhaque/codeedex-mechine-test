@@ -9,7 +9,8 @@ const noteRoutes = require('./routes/noteRoutes');
 const app = express();
 connectDB();
 
-app.use(cors({ origin: 'https://codeedex-mechine-test.vercel.app' }));
+const corsOrigin = process.env.CORS_ORIGIN || 'http://localhost:3000';
+app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
